@@ -31,7 +31,7 @@
 
     <div class="container">
 
-      <%= yield %>
+      <%= content_for?(:posts_laytout) ? content_for(:post_laout) : yield %>
 
     </div> <!-- /container -->
 </body>
