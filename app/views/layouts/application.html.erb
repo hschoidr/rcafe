@@ -33,6 +33,8 @@
 
     <div class="container">
 
+      <%= render partial: "shared/flash_messages", flash: flash %>
+
       <%= content_for?(:posts_laytout) ? content_for(:post_laout) : yield %>
 
     </div> <!-- /container -->
