@@ -13,7 +13,14 @@
   <th>Created at</th>
   <td><%= @post.created_at %></td>
 </tr>
+<% if @post.bulletin.post_type == "gallery" %>
+  <tr>
+    <th>Picutre</th>
+    <td><%= image_tag @post.picture_url %></td>
+  </tr>
+<% end %>
 </table>
+
 
 <%= link_to 'Edit', edit_bulletin_post_path(@post.bulletin, @post), class: 'btn btn-default' %>
 <%= link_to 'Back', bulletin_posts_path, class: 'btn btn-default' %>

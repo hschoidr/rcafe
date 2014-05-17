@@ -16,10 +16,19 @@ class PictureUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process :resize_to_fit => [800, 800]
+  # process :resize_to_fit => [800, 800]
 
   version :thumb do
-    process :resize_to_fill => [200,200]
+    process :resize_to_fill => [200,150]
   end
+
+  def extension_white_list
+    %w(jpg jpeg gif png pdf)
+  end
+
+  def default_url
+    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+  end
+
 
 end

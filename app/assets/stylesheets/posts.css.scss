@@ -14,3 +14,20 @@
     margin-bottom:.5em;
   }
 }
+
+.gallery {
+  // border: 1px solid rgba(54, 85, 87, 0.6);
+  overflow:auto;
+  .picture {
+    position:relative;
+    margin:1.5em 0;
+    .image img {
+      border: 1px solid #928c75;
+    }
+    .title {}
+    .content {}
+    .actions {
+      position:absolute;
+    }
+  }
+}
